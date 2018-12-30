@@ -1,4 +1,4 @@
-Kindly check the "timer" code and "example-output.jpg".
+Kindly check the "timer.php" code and "example-output.jpg", for the JS part only check "timer.js" code.
 
 Code includes 3 parts: CSS, HTML and JS.
 
