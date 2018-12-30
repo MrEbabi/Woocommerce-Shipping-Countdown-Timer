@@ -1,3 +1,9 @@
+<?php
+
+//if you are adding this code to the Wordpress/Woocommerce, delete <?php tag (line 1)
+
+?>
+
 <br><br>
 
 //css part
@@ -105,3 +111,7 @@ var x = setInterval(function()
 }, 1000);
     
 </script>
+
+<?php
+?>
+//if you are adding this code to the Wordpress/Woocommerce, delete ?> tag (line 116)
