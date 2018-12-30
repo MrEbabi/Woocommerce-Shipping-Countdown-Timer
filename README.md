@@ -1,6 +1,3 @@
-# woocommerce-shipping-countdown
-JS Code For Woocommerce Shipping Countdown
-
 Kindly check the "timer" code and "example-output.jpg".
 
 Code includes 3 parts: CSS, HTML and JS.
