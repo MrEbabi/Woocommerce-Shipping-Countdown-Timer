@@ -16,3 +16,5 @@ Add the code with using opening and closing PHP tags before and after the code, 
 Then you will see the example-output.jpg
               
             
+-----
+Source code will be updated as a plugin later.
