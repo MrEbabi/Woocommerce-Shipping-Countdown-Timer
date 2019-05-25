@@ -17,4 +17,4 @@ Then you will see the example-output.jpg
               
             
 -----
-Source code will be updated as a plugin later.
+Source code will be updated as a custom plugin to provide a shortcode to show anywhere you want and edit the remaining time as desired.
