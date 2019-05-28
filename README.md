@@ -1,4 +1,4 @@
-Kindly check the "timer.php" code and "example-output.jpg", for the JS part only check "timer.js" code.
+Kindly check the "timer.php" code and "example-usage-and-output.jpg", for the JS part only check "timer.js" code.
 
 To see as a function check the "shipping-countdown-timer.php code and follow the usage instructions to show countdown timer.
 
