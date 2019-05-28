@@ -6,9 +6,13 @@ Code includes 3 parts: CSS, HTML and JS.
 
 Comments inside the code will help you to understand better.
 
-Usage: 1) Add the entire shipping-countdown-timer.php code to wp-content -> themes -> functions.php
-       2) Add [shipping-countdown-timer] shortcode any page/post you want to show
-       
+Usage: 
+1) Add the entire shipping-countdown-timer.php code to wp-content -> themes -> functions.php
+2) Add [shipping-countdown-timer] shortcode any page/post you want to show
+
+Shortcode attributes: hour and minute   
+Shortcode with attributes usage: [shipping-countdown-timer hour=16 minute=00]
+
 -----
 
 Source code is updated as a single function to easier usage. Plugin includes settings for Shipping Days and Shipping Hours will be developed soon.
