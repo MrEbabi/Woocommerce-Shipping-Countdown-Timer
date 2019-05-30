@@ -15,4 +15,6 @@ Shortcode with attributes usage: [shipping-countdown-timer hour=16 minute=00]
 
 -----
 
-Source code is updated as a single function with a shortcode to easier usage. Plugin includes settings for Shipping Days and Shipping Hours will be developed soon.
+Release: Source code is updated as a single function with a shortcode to easier usage. 
+
+Ongoing: This project is planned to develop as a custom plugin for Wordpress. Plugin will include settings for Shipping Days and Shipping Hours and generate a shortcode regarding these settings.
