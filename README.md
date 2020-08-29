@@ -19,4 +19,4 @@ Comments inside the code will help you to understand better.
 
 Release: Source code is updated as a single function with a shortcode to easier usage. 
 
-To-Do: Shipping dates selection. (For now, it assumes there is no shipping on Saturdays and Sundays)
+Ongoing: Shipping date and time selection form
