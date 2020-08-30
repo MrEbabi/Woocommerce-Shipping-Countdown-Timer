@@ -1,4 +1,3 @@
-<?php
 function get_countdown_timer_settings() {
     global $wpdb;
     $dayResults = $wpdb->get_results("SELECT * FROM wp_options WHERE option_name = '_product_countdown_timer_days'");
@@ -10,17 +9,26 @@ function get_countdown_timer_settings() {
 
 add_action( 'wp_ajax_nopriv_get_countdown_timer_settings', 'get_countdown_timer_settings' );
 add_action( 'wp_ajax_get_countdown_timer_settings', 'get_countdown_timer_settings' );
-    
-    
-function day_selection_enqueue_script() {
-    wp_enqueue_script( 'day-selection-script', get_stylesheet_directory_uri() . '/day-selection-script.js', array('jquery') );
-    wp_localize_script( 'day-selection-script', 'day_selection_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+
+add_menu_page( 'Countdown Timer', 'Countdown Timer', 'manage_options' , 'day-selection-form' , 'day_selection_form', 'dashicons-warning' , '54');
+
+function load_countdown_timer_scripts() {
+    if(is_product())
+    {
+        wp_enqueue_script( 'day-selection-script', get_stylesheet_directory_uri() . '/day-selection-script.js', array('jquery') );
+        wp_localize_script( 'day-selection-script', 'day_selection_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+    }
 }
 
-add_action( 'wp_enqueue_scripts', 'day_selection_enqueue_script' );
+add_action('wp_enqueue_scripts', 'load_countdown_timer_scripts');
 
 function day_selection_form () {
-    $day_time_selection_form = "<form action='' method='post'>";
+    
+    $day_time_selection_form = "<h2>Shipping Countdown Timer Settings</h2>";
+
+    $day_time_selection_form .= "<div style='margin: 50px; background-color: lavender; line-height: 30px; width: 200px;'>";
+    
+    $day_time_selection_form .= "<form action='' method='post'>";
 
 	$days = array(
 		1 => "MONDAY",
@@ -72,7 +80,7 @@ function day_selection_form () {
 		";
 	}
 	
-	$day_time_selection_form .= "<select name='timeSelection'>";
+	$day_time_selection_form .= "<br/><select name='timeSelection'>";
 	
 	foreach($times as $time_num => $time_name) {
 		$day_time_selection_form .= "
@@ -84,10 +92,10 @@ function day_selection_form () {
 	}
 	
 	$day_time_selection_form .= "</select>";
-	$day_time_selection_form .= "<br/>";
+	$day_time_selection_form .= "<br/><br/>";
 	$day_time_selection_form .= "<input type='submit' value='Kaydet' name='submitTimerSettings'>";
 
-	$day_time_selection_form .= "</form>";
+	$day_time_selection_form .= "</form></div>";
 	
 	echo $day_time_selection_form;
 	
@@ -124,4 +132,3 @@ function day_selection_form () {
 
 
 add_shortcode('daySelectionForm', 'day_selection_form');
-?>
