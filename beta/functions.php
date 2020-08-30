@@ -1,3 +1,4 @@
+<?php
 function get_countdown_timer_settings() {
     global $wpdb;
     $dayResults = $wpdb->get_results("SELECT * FROM wp_options WHERE option_name = '_product_countdown_timer_days'");
@@ -132,3 +133,4 @@ function day_selection_form () {
 
 
 add_shortcode('daySelectionForm', 'day_selection_form');
+?>
