@@ -1,9 +1,17 @@
 <?php
+
+//$selectedDayTime = $wpdb->get_results("SELECT * FROM wp_options WHERE option_name = '_product_countdown_timer'");
 function get_countdown_timer_settings() {
+    /*
+     * instead of sql query, use get_option
     global $wpdb;
     $dayResults = $wpdb->get_results("SELECT * FROM wp_options WHERE option_name = '_product_countdown_timer_days'");
     $timeResults = $wpdb->get_results("SELECT * FROM wp_options WHERE option_name = '_product_countdown_timer_hour'");
     $result = array($dayResults[0]->option_value, $timeResults[0]->option_value);
+    */
+    $dayResults = get_option('_product_countdown_timer_days');
+    $timeResults = get_option('_product_countdown_timer_hour');
+    $result = array($dayResults, $timeResults);
     echo json_encode($result);
     wp_die();
 }
@@ -133,4 +141,13 @@ function day_selection_form () {
 
 
 add_shortcode('daySelectionForm', 'day_selection_form');
+
+
+add_action( 'woocommerce_after_add_to_cart_form', 'add_countdown_timer_to_single_product_page' );
+
+function add_countdown_timer_to_single_product_page() {
+
+    $countdown_timer = "<div><p class='Days' id='showDays'></p></div>";
+    echo $countdown_timer;
+}
 ?>
