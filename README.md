@@ -19,4 +19,4 @@ Comments inside the code will help you to understand better.
 
 Release: Source code is updated as a single function with a shortcode to easier usage. 
 
-Ongoing: Shipping date and time selection form
+To-Do: Finish beta, globalize and publish as plugin
